@@ -1,3 +1,5 @@
+package Test;
+
 import HMMDecoding.DecodeErgodicHMM;
 import HMMDecoding.Decoding;
 import HMMEval.EvalErgodicHMM;
