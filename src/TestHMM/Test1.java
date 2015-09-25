@@ -38,7 +38,8 @@ public class Test1 {
 		Evaluation evalErgodicHMM = new EvalErgodicHMM(observation1, ergodicHMM);
 		Decoding decodeErgodicHMM = new DecodeErgodicHMM(observation2, ergodicHMM);
 		
-		System.out.println("Initial Evaluation Value: " + evalErgodicHMM.forward());
+		double temp = evalErgodicHMM.forward();
+		System.out.println("Initial Evaluation Value: " + temp);
 		System.out.println();
 		
 		for (int i = 0; i < 40; i++) {
@@ -49,10 +50,14 @@ public class Test1 {
 			trainErgodicHMM.printUpdate();
 			System.out.println();
 			System.out.println();
-			System.out.println("New Evaluation Value: " + evalErgodicHMM.forward());
+			double temp2 = evalErgodicHMM.forward();
+			System.out.println("New Evaluation Value: " + temp2);
 			System.out.println("-------------------------------------------");
 			
 		}
+		
+		System.out.println();
+		System.out.println("Improvements: " + (temp2 - temp));
 		
 		System.out.println();
 		decodeErgodicHMM.Viterbi();
