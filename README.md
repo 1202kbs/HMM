@@ -16,3 +16,4 @@ The Strategy Pattern has been used to designate different types of training, dec
 The Composite and Iterator Pattern has been used for efficient retrieval of States and Observations.
 
 So far, only the Ergodic Model is implemented, and the other three models will be added later on.
+
