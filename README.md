@@ -14,6 +14,6 @@ This library implements 4 types of Hidden Markov Model:
 
 The Strategy Pattern has been used to designate different types of training, decoding, and evlauation.
 The Composite and Iterator Pattern has been used for efficient retrieval of States and Observations.
+Applications will be updated.
 
 So far, only the Ergodic Model is implemented, and the other three models will be added later on.
-
