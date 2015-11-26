@@ -3,11 +3,11 @@ package TestHMM;
 import java.io.File;
 import java.util.Scanner;
 
-import HMMEval.EvalLinearHMM;
+import HMMEval.EvalGLRHMM;
 import HMMEval.Evaluation;
 import HMMObservation.Observation;
 import HMMObservation.Observations;
-import HMMTraining.TrainLinearHMM;
+import HMMTraining.TrainGLRHMM;
 import HMMTraining.Training;
 import HMMs.GLRHMM;
 import HMMs.HMM;
@@ -104,9 +104,9 @@ public class TimeSeries {
 			System.out.println("Training Observation #" + (i + 1));
 
 			HMM timeSeriesHMM = new GLRHMM("WeatherData", stateLength, delta);
-			Training trainGLRHMM = new TrainLinearHMM(
+			Training trainGLRHMM = new TrainGLRHMM(
 					(Observation) obs.getChild(i), timeSeriesHMM);
-			Evaluation evalGLRHMM = new EvalLinearHMM(
+			Evaluation evalGLRHMM = new EvalGLRHMM(
 					(Observation) obs.getChild(i), timeSeriesHMM);
 
 			System.out.println();
@@ -124,7 +124,7 @@ public class TimeSeries {
 			System.out.println("<Cross Validation>");
 			System.out.println();
 			for (int j = 0; j < obs.getSize(); j++) {
-				Evaluation crossVal = new EvalLinearHMM(
+				Evaluation crossVal = new EvalGLRHMM(
 						(Observation) obs.getChild(j), timeSeriesHMM);
 				System.out.println("#" + (j + 1) + " : " + crossVal.forward());
 			}
